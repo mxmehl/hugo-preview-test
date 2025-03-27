@@ -1,0 +1,242 @@
+// -----------------------------------------------------------------------------
+// GENERAL
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+// Hidden headline, esp. h1
+.hiddenhead {
+  display: none;
+}
+
+// Site heading
+#siteheading {
+  padding: 4rem 7rem 0 7rem;
+}
+
+// Never center text on subpages
+@media screen and (orientation: portrait) {
+  .spotlight.style2 {
+    text-align: left !important;
+  }
+}
+
+// Generic class for margin reduction
+.less-top-margin {
+  margin-top: 1rem !important;
+}
+
+.less-bottom-margin {
+  margin-bottom: 1rem !important;
+}
+
+// Button lists ul shall wrap
+ul.actions {
+  flex-wrap: wrap;
+}
+
+// -----------------------------------------------------------------------------
+// SINGLE PAGES
+
+// Always make inner container full width
+div.inner.medium {
+  width: 100%;
+}
+
+
+// -----------------------------------------------------------------------------
+// NEWS
+section.news,
+section.news-list {
+
+  &.spotlight.style2 {
+
+    // Reduce padding
+    @media (orientation: landscape) {
+      padding: 3rem 7rem 2rem 7rem;
+    }
+
+  }
+}
+
+// Position news images rather on top
+@media screen and (orientation: landscape) {
+  section.news {
+    align-items: flex-start !important;
+
+    div.image {
+      margin-top: 100px !important;
+    }
+  }
+}
+
+// Reduce image size in image listing, and on news items on small screens
+.news-list.spotlight.style2 .image {
+  width: 10rem;
+  height: 10rem;
+}
+
+.news.spotlight.style .image {
+  @media screen and (min-width: 469px) and (max-width: 736px) {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+// No box shadow for first section
+section.news-list:first-of-type {
+  box-shadow: none !important;
+}
+
+
+// -----------------------------------------------------------------------------
+// MEMBERSHIP
+
+.flex-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; // Center images vertically
+  gap: 10px 50px;
+
+  div.card.flex-4-per-row {
+    // Size of the image container. Default: 200px
+    $base_img_size: var(--base_img_size, 200px);
+    // Resize the image when --resize is set. Usually a minus value to make logos the felt same size
+    // Default: $base_img_size
+    $img_square: calc(#{$base_img_size} + (var(--resize, 0px)));
+
+    display: flex;
+    flex-basis: 21%;
+    flex-direction: column;
+    align-items: center; // Ensure the content (image and text) is centered within each div
+    flex-grow: 1;
+    min-width: $base_img_size;
+    min-height: $base_img_size;
+
+    .image-wrapper {
+      display: flex;
+      align-items: center; // Ensure the content (image and text) is centered within each div
+      height: $base_img_size;
+      margin-bottom: 5px; // Space between image and text
+
+      img {
+        max-width: $img_square;
+        max-height: $img_square;
+        object-fit: contain;
+      }
+    }
+
+    p {
+      margin-top: 0px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// PEOPLE, PERSONS
+
+div.people-gallery {
+  // Width of person container, same as image and "box"
+  $person-width: 250px;
+  $person-width-small: 150px;
+  $max-person-columns: 5;
+  $person-gap: 30px;
+
+  display: flex;
+  gap: $person-gap;
+  flex-wrap: wrap;
+
+  // Max. $person-columns persons next to each other
+  max-width: calc((#{$person-width} + #{$person-gap}) * #{$max-person-columns});
+
+  section.person {
+
+    min-width: $person-width !important;
+    width: 0;
+
+    // Image of person
+    img {
+      object-fit: cover;
+      height: $person-width;
+      width: $person-width;
+      border-radius: 15px;
+    }
+
+    // Name of person
+    h5 {
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      font-weight: 400;
+    }
+
+    // Text below person
+    p {
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+
+      // Do not wrap organisation name
+      strong.nowrap {
+        white-space: nowrap;
+      }
+    }
+
+    // Links, e.g. LinkedIn
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+
+      li {
+        display: inline;
+        padding-left: 0;
+        margin-right: 5px;
+
+        i {
+          color: #444;
+        }
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      min-width: $person-width-small !important;
+
+      img {
+        height: $person-width-small;
+        width: $person-width-small;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// IMAGES, especially hugomods-image related (like Bootstrap)
+
+picture {
+  @media screen and (min-width: 768px) {
+    &.float-start {
+      float: left;
+      margin-top: 10px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      margin-left: 0px;
+    }
+
+    &.float-end {
+      float: right;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      margin-right: 0px;
+    }
+  }
+}

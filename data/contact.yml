@@ -1,0 +1,16 @@
+####################### Contact #########################
+
+title: Get in touch
+email: contact@openrailassociation.org
+before_email: |
+  <p>
+      You can reach us by sending an email to
+      <br />
+after_email: |
+  </p>
+  <p>
+      You are also welcome to join the <a
+      href="https://lists.openrailassociation.org/postorius/lists/general.lists.openrailassociation.org/"
+      target="_blank">OpenRail mailing list</a> for general discussions and
+      announcements. This is the best way to be informed about updates.
+  </p>

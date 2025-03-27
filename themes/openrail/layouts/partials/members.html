@@ -1,0 +1,33 @@
+<!-- Supporters -->
+<section class="wrapper style1 align-center" id="members">
+  <div class="inner">
+    <h2>{{ .title }}</h2>
+    <p>
+      {{ with .introduction }}{{ . | safeHTML }}{{ end }}
+    </p>
+    <div class="{{ .listclass }}" id="members-overview" style="--base_img_size: {{ .base_img_size }}">
+      {{ range .members }}
+      <div class="card flex-4-per-row" {{ with .resize }}style="--resize:{{ . }};" {{ end }}>
+        <div class="image-wrapper">
+          <a href="{{ .link }}" target="_blank">
+            {{- $img_resized := (resources.Get .imgsrc).Resize "300x" }}
+            <img src="{{ $img_resized.RelPermalink }}" alt="{{ .name }} logo" />
+          </a>
+        </div>
+        <p>{{ .name }}</p>
+      </div>
+      {{ end }}
+    </div>
+    <div class="index align-left">
+      <section>
+        <header>
+          <h3>{{ .join_title }}</h3>
+        </header>
+        <div class="content">
+          <p>{{ .join_text }}</p>
+          <p><a href="{{ urls.RelURL .join_link.link }}" class="button smooth-scroll-middle small wide">{{ .join_link.text }}</a></p>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

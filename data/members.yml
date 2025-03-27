@@ -1,0 +1,64 @@
+####################### Members #########################
+
+title: OpenRail Members
+introduction: |
+  The organisations listed below have agreed on the principles and believe in
+  the benefits of an Open Source foundation for the railway sector. They have
+  founded and joined the OpenRail Association, and firmly believe that Open
+  Source is a great opportunity for this industry.
+
+listclass: less-bottom-margin less-top-margin flex-cards
+base_img_size: 200px
+
+members:
+  # Platinum
+  - name: UIC
+    link: https://uic.org
+    imgsrc: images/members/uic.jpg
+  - name: Deutsche Bahn
+    link: https://deutschebahn.com
+    imgsrc: images/members/db.png
+    resize: -30px
+  - name: SNCF
+    link: https://sncf.com
+    imgsrc: images/members/sncf.png
+  - name: SBB CFF FFS
+    link: https://www.sbb.ch
+    imgsrc: images/members/sbb.png
+  # Gold
+  - name: Infrabel
+    link: https://infrabel.be/en
+    imgsrc: images/members/infrabel.png
+  - name: ONCF
+    link: https://www.oncf.ma/
+    imgsrc: images/members/oncf.png
+  # Silver
+  - name: Entur
+    link: https://developer.entur.org
+    imgsrc: images/members/entur.png
+  # Associate
+  - name: Flatland Association
+    link: https://www.flatland-association.org/
+    imgsrc: images/members/flatland-logo.jpg
+    resize: -40px
+
+join_title: And how about you?
+join_text: |
+  We are looking forward to accept new members and make our community grow.
+join_link:
+  text: "Learn more about how to join"
+  link: "/about/#join"
+
+membership_links:
+  - name: Membership form
+    link: "/documents/OpenRail-Membership-Form.pdf"
+    class: small wide
+  - name: Statutes
+    link: "/documents/OpenRail-Association-Statutes.pdf"
+    class: small wide
+  - name: Compliance and Antitrust Policy
+    link: "/documents/OpenRail-Compliance-and-Antritrust-Policy.pdf"
+    class: small wide
+  - name: Get in touch
+    link: "/#contact"
+    class: small wide

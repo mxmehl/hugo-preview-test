@@ -1,0 +1,53 @@
+## -----------------------------------------------
+## Basic Configuration
+## -----------------------------------------------
+
+theme: ["openrail", "hugomods-images", "hugo-cloak-email"]
+title: OpenRail Association
+copyright: "{year}"
+
+## -----------------------------------------------
+## Publish
+## -----------------------------------------------
+
+baseURL: "https://mxmehl.github.io/hugo-preview-test/"
+relativeURLs: "false"
+publishDir: public
+summaryLength: 40
+
+## -----------------------------------------------
+## Hugo Built-in Features
+## -----------------------------------------------
+
+disableKinds:
+  - taxonomy
+
+## -----------------------------------------------
+## Site Parameters
+## -----------------------------------------------
+
+Params:
+  description: >-
+    The OpenRail Association provides a neutral space for collaborative development of Open Source software in the railway sector. It is incorporated as a non-profit organisation according to Belgian law as AISBL.
+  logo: images/banner.jpg
+  favicon: true
+  asset:
+    fontawesome_css:
+      - css/fontawesome-all.min.css
+    fontawesome_js:
+      - js/fontawesome-all.min.js
+
+  # hugomods-images config
+  hugomods:
+    images:
+      # Disable WebP
+      modern_format:
+permalinks:
+  news: "/news/:2006/:title/"
+
+# Modules
+module:
+  mounts:
+  # Make all static content available as assets by default
+  - source: static/
+    target: assets/
